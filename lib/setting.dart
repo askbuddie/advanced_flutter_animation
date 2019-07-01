@@ -8,11 +8,13 @@ class Setting extends StatefulWidget {
 
 class _SettingState extends State<Setting> {
   double bubbleCount = 200;
-  double maxBubbleSize = 10;
+  double maxBubbleSize = 20;
   double speed = 1;
   Color color;
   double canvasWidth;
   double canvasHeight;
+  String animation;
+  String gesture;
 
   static const colors = <Color>[
     Colors.red,
@@ -34,6 +36,34 @@ class _SettingState extends State<Setting> {
     Colors.brown,
     Colors.blueGrey
   ];
+  static const gestur = ['Default', 'CenterBlast', 'Dart', 'Attract', 'Eraser'];
+  static const bubble = [
+    'Default',
+    'WallBreaker',
+    'OnWeed',
+    'Goodnbad',
+    'Battle',
+    'Rain'
+  ];
+
+  List<DropdownMenuItem<String>> animationList = bubble.map((b) {
+    return DropdownMenuItem<String>(
+      value: b,
+      child: Text(
+        b,
+        style: TextStyle(color: Colors.black),
+      ),
+    );
+  }).toList();
+  final List<DropdownMenuItem<String>> gestureList = gestur.map((animation) {
+    return DropdownMenuItem<String>(
+      value: animation,
+      child: Text(
+        animation,
+        style: TextStyle(color: Colors.black),
+      ),
+    );
+  }).toList();
   final List<DropdownMenuItem<Color>> colorsList = colors.map((colr) {
     return DropdownMenuItem<Color>(
       value: colr,
@@ -54,7 +84,7 @@ class _SettingState extends State<Setting> {
             onPressed: () {
               setState(() {
                 bubbleCount = 200;
-                maxBubbleSize = 10;
+                maxBubbleSize = 20;
                 speed = 1;
                 color = null;
                 canvasWidth = null;
@@ -197,7 +227,6 @@ class _SettingState extends State<Setting> {
                 Slider(
                   activeColor: Colors.indigoAccent,
                   min: 120.0,
-                  // label: '${canvasHeight.round()}',
                   max: MediaQuery.of(context).size.height,
                   onChanged: (value) {
                     setState(() => canvasHeight = value);
@@ -212,15 +241,88 @@ class _SettingState extends State<Setting> {
           SizedBox(
             height: 10,
           ),
-          DropdownButton(
-            value: color,
-            hint: Text('Choose custom bubble color'),
-            onChanged: (value) {
-              setState(() {
-                color = value;
-              });
-            },
-            items: this.colorsList,
+          Card(
+            elevation: 2,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Bubble color',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 9, right: 9),
+                  child: DropdownButton(
+                    underline: Container(),
+                    value: color,
+                    hint: Text('Choose custom bubble color'),
+                    onChanged: (value) {
+                      setState(() {
+                        color = value;
+                      });
+                    },
+                    items: this.colorsList,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Card(
+                elevation: 2,
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'Bubble animation',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9, right: 9),
+                      child: DropdownButton(
+                        underline: Container(),
+                        value: animation,
+                        hint: Text('Default'),
+                        onChanged: (value) {
+                          setState(() {
+                            animation = value;
+                          });
+                        },
+                        items: this.animationList,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                elevation: 2,
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'On Draw Effect',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9, right: 9),
+                      child: DropdownButton(
+                        underline: Container(),
+                        value: gesture,
+                        hint: Text('Default'),
+                        onChanged: (value) {
+                          setState(() {
+                            gesture = value;
+                          });
+                        },
+                        items: this.gestureList,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
           Container(
             child: RaisedButton(
@@ -234,6 +336,8 @@ class _SettingState extends State<Setting> {
                               maxBubbleSize: maxBubbleSize,
                               speed: speed,
                               color: color,
+                              animation: animation,
+                              gesture: gesture,
                               canvasWidth: canvasWidth,
                               canvasHeight: canvasHeight,
                             )));
@@ -248,8 +352,8 @@ class _SettingState extends State<Setting> {
           ),
           Expanded(child: SizedBox()),
           Text(
-            'AskBuddie0S v1.0',
-            style: TextStyle(color: Colors.grey),
+            'AskBuddie0S v1.0.1',
+            style: TextStyle(color: Colors.grey,fontFamily: 'Femen'),
           )
         ],
       ),

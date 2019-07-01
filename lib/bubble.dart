@@ -3,13 +3,17 @@ import 'package:fubble/model_logic.dart';
 
 class BubblePainter extends CustomPainter {
   List<Bubble> bubbles;
+  Offset offset;
   AnimationController controller;
 
-  BubblePainter({this.bubbles, this.controller});
+  BubblePainter({this.bubbles, this.controller,});
 
   @override
   void paint(Canvas canvas, Size canvasSize) {
-    bubbles.forEach((it) => it.draw(canvas, canvasSize));
+    bubbles.forEach((bubble) {
+      bubble.draw(canvas, canvasSize);
+      // bubble.repel(offset, bubble);
+    });
   }
 
   @override

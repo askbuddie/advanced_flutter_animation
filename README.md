@@ -67,7 +67,9 @@ List of all Contributors:
 ## Contribution
 
 
-Check the [installation](#installation) section to start contributing to this project.
+- [Fork](https://github.com/askbuddie/advancedflutteranimation/fork) the project
+- Add a `feature-branch` and add your features
+- Send pull request and wait to merge.
 
 
 ## License
