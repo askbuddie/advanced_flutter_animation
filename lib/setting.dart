@@ -353,7 +353,7 @@ class _SettingState extends State<Setting> {
           Expanded(child: SizedBox()),
           Text(
             'AskBuddie0S v1.0.1',
-            style: TextStyle(color: Colors.grey,fontFamily: 'Femen'),
+            style: TextStyle(color: Colors.grey),
           )
         ],
       ),

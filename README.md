@@ -30,7 +30,7 @@ No Prerequisites you can start editing if you have flutter installed i have made
  
 ## Installation
 
-Download the  [app here](https://github.com/askbuddie/advancedflutteranimation/blob/master/fubble1.apk)
+Download the  [app here](https://github.com/askbuddie/advancedflutteranimation/blob/master/fubble.apk)
 
 OR
 
