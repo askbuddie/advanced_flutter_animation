@@ -48,8 +48,10 @@ git clone https://github.com/askbuddie/advancedflutteranimation.git
 ```
  
 ## Demo
-
-[Project demo will be available here](https://www.youtube.com/sidtube)
+[Click on the image to watch](https://youtu.be/kwtu2Wf1fO8)
+<a href="https://youtu.be/kwtu2Wf1fO8">
+        <img src="https://i9.ytimg.com/vi/kwtu2Wf1fO8/hqdefault.jpg?sqp=CNii7OgF&rs=AOn4CLBUruWFP_2qc0xdmaJvsJoMFRQAGQ" align="center" alt="icon"/>
+    </a>
  
 
  
