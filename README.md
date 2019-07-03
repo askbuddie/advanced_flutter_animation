@@ -49,9 +49,13 @@ git clone https://github.com/askbuddie/advancedflutteranimation.git
  
 ## Demo
 [Click on the image to watch](https://youtu.be/kwtu2Wf1fO8)
-<a href="https://youtu.be/kwtu2Wf1fO8">
-        <img src="https://i9.ytimg.com/vi/kwtu2Wf1fO8/hqdefault.jpg?sqp=CNii7OgF&rs=AOn4CLBUruWFP_2qc0xdmaJvsJoMFRQAGQ" align="center" alt="icon"/>
+    <a href="https://youtu.be/kwtu2Wf1fO8">
+        <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/thumb.jpg" align="center" alt="icon"/>
     </a>
+    
+## Screenshots
+ <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/home.png"   align="center" height="480px" /> <img src="https://raw.githubusercontent.com/cimplesid/fubble/master/setting.png" align="center" height="480px" alt="icon"/>
+  
  
 
  
